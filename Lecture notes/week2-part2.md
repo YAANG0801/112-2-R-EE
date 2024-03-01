@@ -38,9 +38,8 @@
 
 
 
-<div class="note">
-重點
-</div>
+### Key concept: data import
+Always start from importing data to R.
 
 > 如何把https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981中的「選舉開票結果」表單引入R
 
@@ -64,7 +63,7 @@ my_data <- gs_read(my_sheet, ws = "選舉開票結果")  # 讀取指定的工作
 
 這樣就能將位於指定Google Sheets中的"選舉開票結果"表單引入到R中的my_data數據框。希望這能幫助你成功將資料引入R中！
 
-***
+### key concept: googlesheets4
 
 In R, the package to deal with Google sheets is called **googlesheets4**.
 
