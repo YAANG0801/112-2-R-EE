@@ -1,3 +1,12 @@
+```css
+.note {
+  color: #fff;
+  background-color: aliceblue;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+```
+
 # Goals
 
 1. Frame a proper prompt for AI 
@@ -25,12 +34,13 @@
 這樣就能方便快速地找出每個里最支持的候選人了。希望這個方法對你有所幫助！
 ```
 
-沒有程式說明幫你做這件事情，但是：
+沒有程式說明幫你做這件事情。
 
-```
-1. (Done) 
-2. Not yet.
-```
+
+
+<div class="note">
+重點
+</div>
 
 > 如何把https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981中的「選舉開票結果」表單引入R
 
@@ -45,7 +55,7 @@ install.packages("googlesheets")
 library(googlesheets)
 ```
 
-2. 使用gs_key()函數來指定Google Sheets的ID，然後讀取該文件的內容：
+1. 使用gs_key()函數來指定Google Sheets的ID，然後讀取該文件的內容：
 ```R
 sheet_id <- "19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8"  # 使用表單的ID
 my_sheet <- gs_key(sheet_id)
