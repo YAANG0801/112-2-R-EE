@@ -53,3 +53,30 @@ my_data <- gs_read(my_sheet, ws = "選舉開票結果")  # 讀取指定的工作
 ```
 
 這樣就能將位於指定Google Sheets中的"選舉開票結果"表單引入到R中的my_data數據框。希望這能幫助你成功將資料引入R中！
+
+***
+
+In R, the package to deal with Google sheets is called **googlesheets4**.
+
+> 如何把https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981中的「選舉開票結果」表單引入R使用googlesheets4
+
+
+
+> 若要將位於 https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981 的"選舉開票結果"表單引入R中，你可以使用 `googlesheets4` 套件。以下是一個示例：
+
+1. 首先，在R中安裝並載入 `googlesheets4` 套件：
+```R
+install.packages("googlesheets4")
+library(googlesheets4)
+```
+
+2. 使用 `read_sheet()` 函數來讀取 Google Sheets 中的特定工作表：
+```R
+# 指定Google Sheets連結
+url <- "https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981"
+
+# 讀取指定的工作表
+my_data <- read_sheet(url)
+```
+
+這樣就可以使用 `googlesheets4` 套件來成功將指定的 Google Sheets 中的"選舉開票結果"表單引入到R環境中的 my_data 物件中。希望這個解答對您有幫助！如果您有任何進一步問題，歡迎隨時問我。
