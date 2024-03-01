@@ -31,6 +31,8 @@ We will use ChatGPT as our AI assistant. There are two ways to use it:
 
 1. ChatGPT standalone app
 2. OpenAI API: when you access ChatGPT through other applications. 
+   
+> When you use a third-party application, you will need to sign up for an OpenAI account and get an API key.
 
 Sigup which way you want to use this AI through <https://platform.openai.com/apps>
 
@@ -42,4 +44,12 @@ You can use ChatGPT standalone app by visiting <https://chat.openai.com/>
 
 ### OpenAI API
 
+Get your api key.
+
 ![](../img/2024-03-01-14-53-44.png)
+
+### Harpa chrome extension
+
+A 3rd party application as Chrome extension that uses ChatGPT as an AI assistant.  
+
+You can install Harpa by visiting <https://chromewebstore.google.com/detail/harpa-ai-automation-agent/eanggfilgoajaocelnaflolkadkeghjp>
