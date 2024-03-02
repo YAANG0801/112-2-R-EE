@@ -12,7 +12,7 @@ We will use Google classroom to manage the course materials and assignments. You
 - Weekly video recordings
 - The class's cloud computing workspace (hosted in [Posit](https://posit.cloud/))
 
-## Cloud computing
+## R on the cloud
 
 We will use the cloud computing platform [Posit](https://posit.cloud/).
 
