@@ -16,6 +16,9 @@
 
 > I have a data from ..., and I want to know ...
 
+
+### Key concept: A chat is 
+
 ## 選舉開票結果
 
 > 我有一個各里投票結果的資料，我想知道每個里最支持哪個候選人
@@ -67,25 +70,29 @@ my_data <- gs_read(my_sheet, ws = "選舉開票結果")  # 讀取指定的工作
 
 In R, the package to deal with Google sheets is called **googlesheets4**.
 
-> 如何把https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981中的「選舉開票結果」表單引入R使用googlesheets4
+> 如何把https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981中的`選舉開票結果`表引入R使用googlesheets4
 
+***
 
+您可以使用以下代码将位于 https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981 的"選舉開票結果"表单引入R中使用`googlesheets4`包：
 
-> 若要將位於 https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981 的"選舉開票結果"表單引入R中，你可以使用 `googlesheets4` 套件。以下是一個示例：
-
-1. 首先，在R中安裝並載入 `googlesheets4` 套件：
 ```R
+# 安装并加载googlesheets4包
 install.packages("googlesheets4")
 library(googlesheets4)
+
+# 鉴权
+gs4_auth()
+
+# 指定Google Sheets链接
+sheet_url <- "https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981"
+
+# 读取指定的表单
+my_data <- gs4_get(sheet_url, sheet = "選舉開票結果")
 ```
 
-2. 使用 `read_sheet()` 函數來讀取 Google Sheets 中的特定工作表：
-```R
-# 指定Google Sheets連結
-url <- "https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=1091784981"
+运行这段代码将把"選舉開票結果"表单从指定的Google Sheets链接导入到R中，并存储在`my_data`变量中。希望这对您有帮助！如果有任何进一步问题，请随时提出。
 
-# 讀取指定的工作表
-my_data <- read_sheet(url)
-```
-
-這樣就可以使用 `googlesheets4` 套件來成功將指定的 Google Sheets 中的"選舉開票結果"表單引入到R環境中的 my_data 物件中。希望這個解答對您有幫助！如果您有任何進一步問題，歡迎隨時問我。
+> my_data <- gs4_get(sheet_url, sheet = "選舉開票結果")
+Error in gs4_get(sheet_url, sheet = "選舉開票結果") : 
+  unused argument (sheet = "選舉開票結果") 是錯的
