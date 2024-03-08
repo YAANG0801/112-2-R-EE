@@ -1,0 +1,197 @@
+
+<div class="DialogChat__list">
+    <div class="DialogMessage DialogMessage_question">
+        <row class="DialogQuestion" x-end="true">
+            <row class="DialogQuestion__body">
+                <div class="DialogQuestion__content DialogQuestion__content_size_normal">
+                    <div class="Markdown markdown-body">
+                        <p>How to summarise a long PDF using AI</p>
+                    </div>
+                    <row class="DialogReactions DialogReactions_question" y-center="true">
+                        <row class="DialogReactions__action DialogReactions__action_save Icon Icon_save Icon_clickable"
+                            style="width: 11px; height: 14px;"><svg class="Icon__svg">
+                                <use href="#Icon-save"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_copy Icon Icon_copy Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-copy"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                    </row>
+                </div>
+            </row>
+        </row>
+    </div>
+    <div class="DialogMessage DialogMessage_question">
+        <row class="DialogQuestion" x-end="true">
+            <row class="DialogQuestion__body">
+                <div class="DialogQuestion__content DialogQuestion__content_size_normal">
+                    <div class="Markdown markdown-body">
+                        <p>Given an outline of data structure and different file types for R program to import</p>
+                    </div>
+                    <row class="DialogReactions DialogReactions_question" y-center="true">
+                        <row class="DialogReactions__action DialogReactions__action_save Icon Icon_save Icon_clickable"
+                            style="width: 11px; height: 14px;"><svg class="Icon__svg">
+                                <use href="#Icon-save"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_copy Icon Icon_copy Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-copy"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                    </row>
+                </div>
+            </row>
+        </row>
+    </div>
+    <div class="DialogMessage DialogMessage_question">
+        <row class="DialogQuestion" x-end="true">
+            <row class="DialogQuestion__body">
+                <div class="DialogQuestion__content DialogQuestion__content_size_normal">
+                    <div class="Markdown markdown-body">
+                        <p>outline data format and how to import in R</p>
+                    </div>
+                    <row class="DialogReactions DialogReactions_question" y-center="true">
+                        <row class="DialogReactions__action DialogReactions__action_save Icon Icon_save Icon_clickable"
+                            style="width: 11px; height: 14px;"><svg class="Icon__svg">
+                                <use href="#Icon-save"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_copy Icon Icon_copy Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-copy"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                    </row>
+                </div>
+                <div class="DialogQuestion__tail"></div>
+            </row>
+        </row>
+    </div>
+    <div class="DialogMessage DialogMessage_answer">
+        <div class="DialogAnswer DialogAnswer_hasReactions">
+            <div class="DialogAnswer__body">
+                <div class="DialogAnswer__content DialogAnswer__content_size_wide">
+                    <div>
+                        <div>
+                            <div class="Markdown markdown-body">
+                                <p>In R, data can be imported from various file formats including CSV (comma-separated
+                                    values), Excel, JSON, XML, and databases like MySQL or SQLite. Below is an outline
+                                    of the common data formats and how to import them in R:</p>
+                                <ol>
+                                    <li>
+                                        <p>CSV (Comma-Separated Values):</p>
+                                        <ul>
+                                            <li>CSV files are simple text files where each line represents a row of
+                                                data, and values are separated by commas.</li>
+                                            <li>To import a CSV file in R, you can use the <code>read.csv()</code>
+                                                function or its faster counterpart <code>read.csv2()</code> for European
+                                                formatted CSV files.</li>
+                                        </ul>
+                                        <p>Example:</p>
+                                        <pre><code class="language-R hljs" data-highlighted="yes">data <span class="hljs-operator">&lt;-</span> read.csv<span class="hljs-punctuation">(</span><span class="hljs-string">"file.csv"</span><span class="hljs-punctuation">)</span>
+</code></pre>
+                                    </li>
+                                    <li>
+                                        <p>Excel:</p>
+                                        <ul>
+                                            <li>Excel files contain data arranged in rows and columns within sheets.
+                                            </li>
+                                            <li>To import Excel files in R, you need to use the <code>readxl</code>
+                                                package or the <code>openxlsx</code> package.</li>
+                                        </ul>
+                                        <p>Example using <code>readxl</code>:</p>
+                                        <pre><code class="language-R hljs" data-highlighted="yes">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">"readxl"</span><span class="hljs-punctuation">)</span>
+library<span class="hljs-punctuation">(</span>readxl<span class="hljs-punctuation">)</span>
+data <span class="hljs-operator">&lt;-</span> read_excel<span class="hljs-punctuation">(</span><span class="hljs-string">"file.xlsx"</span><span class="hljs-punctuation">,</span> sheet <span class="hljs-operator">=</span> <span class="hljs-string">"Sheet1"</span><span class="hljs-punctuation">)</span>
+</code></pre>
+                                    </li>
+                                    <li>
+                                        <p>JSON (JavaScript Object Notation):</p>
+                                        <ul>
+                                            <li>JSON is a lightweight data-interchange format.</li>
+                                            <li>To import JSON data in R, you can use the <code>jsonlite</code> package.
+                                            </li>
+                                        </ul>
+                                        <p>Example:</p>
+                                        <pre><code class="language-R hljs" data-highlighted="yes">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">"jsonlite"</span><span class="hljs-punctuation">)</span>
+library<span class="hljs-punctuation">(</span>jsonlite<span class="hljs-punctuation">)</span>
+data <span class="hljs-operator">&lt;-</span> fromJSON<span class="hljs-punctuation">(</span><span class="hljs-string">"file.json"</span><span class="hljs-punctuation">)</span>
+</code></pre>
+                                    </li>
+                                    <li>
+                                        <p>XML (eXtensible Markup Language):</p>
+                                        <ul>
+                                            <li>XML is a markup language that defines rules for encoding documents in a
+                                                format that is both human-readable and machine-readable.</li>
+                                            <li>To import XML data in R, you can use the <code>XML</code> package or
+                                                <code>xml2</code> package.</li>
+                                        </ul>
+                                        <p>Example using <code>xml2</code>:</p>
+                                        <pre><code class="language-R hljs" data-highlighted="yes">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">"xml2"</span><span class="hljs-punctuation">)</span>
+library<span class="hljs-punctuation">(</span>xml2<span class="hljs-punctuation">)</span>
+doc <span class="hljs-operator">&lt;-</span> read_xml<span class="hljs-punctuation">(</span><span class="hljs-string">"file.xml"</span><span class="hljs-punctuation">)</span>
+data <span class="hljs-operator">&lt;-</span> xml_to_df<span class="hljs-punctuation">(</span>doc<span class="hljs-punctuation">)</span>
+</code></pre>
+                                    </li>
+                                    <li>
+                                        <p>Databases:</p>
+                                        <ul>
+                                            <li>R provides various packages to interact with databases such as
+                                                <code>DBI</code>, <code>RODBC</code>, <code>RMySQL</code>,
+                                                <code>RPostgreSQL</code>, etc.</li>
+                                        </ul>
+                                        <p>Example using <code>RMySQL</code>:</p>
+                                        <pre><code class="language-R hljs" data-highlighted="yes">install.packages<span class="hljs-punctuation">(</span><span class="hljs-string">"RMySQL"</span><span class="hljs-punctuation">)</span>
+library<span class="hljs-punctuation">(</span>RMySQL<span class="hljs-punctuation">)</span>
+con <span class="hljs-operator">&lt;-</span> dbConnect<span class="hljs-punctuation">(</span>MySQL<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> user<span class="hljs-operator">=</span><span class="hljs-string">"user"</span><span class="hljs-punctuation">,</span> password<span class="hljs-operator">=</span><span class="hljs-string">"password"</span><span class="hljs-punctuation">,</span> dbname<span class="hljs-operator">=</span><span class="hljs-string">"database"</span><span class="hljs-punctuation">,</span> host<span class="hljs-operator">=</span><span class="hljs-string">"host"</span><span class="hljs-punctuation">)</span>
+data <span class="hljs-operator">&lt;-</span> dbGetQuery<span class="hljs-punctuation">(</span>con<span class="hljs-punctuation">,</span> <span class="hljs-string">"SELECT * FROM table"</span><span class="hljs-punctuation">)</span>
+</code></pre>
+                                    </li>
+                                </ol>
+                                <p>These are some common data formats and methods to import them in R. Depending on your
+                                    specific data source and format, you might need to use different R packages or
+                                    methods for importing data.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <row class="DialogReactions DialogReactions_answer" y-center="true">
+                        <row class="DialogReactions__action DialogReactions__action_like Icon Icon_like Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-like"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_dislike Icon Icon_dislike Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-dislike"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_paste Icon Icon_paste Icon_clickable"
+                            style="width: 13.244px; height: 15px;"><svg class="Icon__svg">
+                                <use href="#Icon-paste"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                        <row class="DialogReactions__action DialogReactions__action_copy Icon Icon_copy Icon_clickable"
+                            style="width: 16px; height: 18px;"><svg class="Icon__svg">
+                                <use href="#Icon-copy"></use>
+                            </svg>
+                            <div class="Icon__hitbox Icon__hitbox_size_normal"></div>
+                        </row>
+                    </row>
+                </div>
+                <div class="DialogAnswer__tail"></div>
+            </div>
+        </div>
+    </div>
+</div>
