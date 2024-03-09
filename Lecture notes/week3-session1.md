@@ -2,19 +2,19 @@
 
 
 - [<span class="toc-section-number">1</span> Goals](#goals)
-  - [<span class="toc-section-number">1.0.1</span> Key concept: Harpa
+  - [<span class="toc-section-number">1.1</span> Key concept: Harpa
     ChatGPT and API](#key-concept-harpa-chatgpt-and-api)
-  - [<span class="toc-section-number">1.0.2</span> key concept: Preset
+  - [<span class="toc-section-number">1.2</span> key concept: Preset
     your AI chat](#key-concept-preset-your-ai-chat)
-- [<span class="toc-section-number">2</span>
-  如何引入外部資料到R](#如何引入外部資料到r)
-  - [<span class="toc-section-number">2.1</span>
-    開放政府資料](#開放政府資料)
-    - [<span class="toc-section-number">2.1.1</span>
+  - [<span class="toc-section-number">1.3</span>
+    如何引入外部資料到R](#如何引入外部資料到r)
+    - [<span class="toc-section-number">1.3.1</span>
+      開放政府資料](#開放政府資料)
+    - [<span class="toc-section-number">1.3.2</span>
       常見資料格式](#常見資料格式)
-    - [<span class="toc-section-number">2.1.2</span> Key concept: (AI)
+    - [<span class="toc-section-number">1.3.3</span> Key concept: (AI)
       透過page模式和網頁資訊聊天](#key-concept-ai-透過page模式和網頁資訊聊天)
-    - [<span class="toc-section-number">2.1.3</span> (AI)
+    - [<span class="toc-section-number">1.3.4</span> (AI)
       介紹這裡的檔案格式](#ai-介紹這裡的檔案格式)
 
 # Goals
@@ -22,22 +22,24 @@
 1.  Recap ChatGPT and Harpa user interface.
 2.  
 
-### Key concept: Harpa ChatGPT and API
+## Key concept: Harpa ChatGPT and API
 
 ChatGPT是免費的但只能用gpt-3.5 model
 
 API是使用者付費，可自由設定所使用的openAI models
 
-### key concept: Preset your AI chat
+## key concept: Preset your AI chat
 
 > For the following chat, if the answer is programming related, use R
 > only.
 
-# 如何引入外部資料到R
+## 如何引入外部資料到R
 
-## 開放政府資料
+### 開放政府資料
 
 <https://data.gov.tw/>
+
+AI \>
 
 ``` ai
 介紹這裡的資料格式
