@@ -19,11 +19,11 @@
     - [<span class="toc-section-number">1.3.5</span> (AI)
       介紹這裡的檔案格式](#ai-介紹這裡的檔案格式)
   - [<span class="toc-section-number">1.4</span> 活動](#活動)
+    - [<span class="toc-section-number">1.4.1</span> Key concept:
+      (AI)善用AI
+      chat的記憶性設定前提](#key-concept-ai善用ai-chat的記憶性設定前提)
 
 # Goals
-
-1.  Recap ChatGPT and Harpa user interface.
-2.  
 
 ## Key concept: Harpa ChatGPT and API
 
@@ -92,3 +92,9 @@ AI \>
 ## 活動
 
 在開放政府找一個資料，並請AI教你如何把資料引入R.
+
+### Key concept: (AI)善用AI chat的記憶性設定前提
+
+AI\>
+
+    以下問題如果回覆用到程式請使用R
