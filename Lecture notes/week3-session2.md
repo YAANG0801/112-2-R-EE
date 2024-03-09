@@ -21,10 +21,22 @@
 
 ## 引入Google sheets
 
+``` r
+url <- "https://docs.google.com/spreadsheets/d/19iDkioNuPbHpIGdCVX-oI9wFtgtqOWWU0WXgLAWMxg8/edit#gid=0"
+
+voting <- googlesheets4::read_sheet(
+  url, sheet="選舉開票結果"
+)
+```
+
 ## Key concept: data frame 是像試算表結構的資料。
 
 ## 引入json
 
 <https://data.gov.tw/dataset/85848>
+
+``` r
+bus <- jsonlite::fromJSON("path/to/your/file.json")
+```
 
 ## Key concept: 廣意的結構用list, list裡的第一層資料可以用第幾個元素或元素名稱來稱呼
