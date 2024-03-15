@@ -17,7 +17,7 @@ AI>
 
 #### 上傳到RStudio
 
-![upload to Rstudio](../../img/2024-03-16-06-08-27.png)
+![upload to Rstudio](../img/2024-03-16-06-08-27.png)
 
 #### 引入外部資料
 
@@ -37,11 +37,11 @@ AI>
 
 #### Chrome另存新檔
 
-![save json](../../img/2024-03-16-06-06-05.png)
+![save json](../img/2024-03-16-06-06-05.png)
 
 #### 上傳到RStudio
 
-![upload to Rstudio](../../img/2024-03-16-06-08-27.png)
+![upload to Rstudio](../img/2024-03-16-06-08-27.png)
 
 
 #### 引入外部資料
