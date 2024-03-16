@@ -86,6 +86,7 @@ AI>
 
 ### 範例完整程式
 
+```
 # 引入csv ------
 
 ## 安裝並載入 tidyverse 套件 ----
@@ -171,4 +172,4 @@ ss <- "https://docs.google.com/spreadsheets/d/1tv8IqRoYm7tFi_K0_gifb1d27i87j2g3Z
 
 # 將result寫入google工作表的"Sheet2"
 result %>% write_sheet(ss, "Sheet2")
-
+```
