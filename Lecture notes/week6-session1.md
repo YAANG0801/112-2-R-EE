@@ -46,4 +46,26 @@ AI》
 
 得到各大學各等級別，不分日間/進修別，的學生人數
 
-## 
+
+# 範例程式
+
+```r
+
+# 引入大專院校學生人數----
+library(readr)
+df_all <- read_csv("112_student.csv")
+
+library(dplyr)
+
+## 計算各校各學制學生人數----
+result <- df_all %>%
+  group_by(學校名稱, 等級別) %>%
+  summarise(總計加總 = sum(總計))
+  
+print(result)
+
+# 引入原住民學生數----
+library(readr)
+df_native <- read_csv("112native_A1-1.csv")
+
+```
