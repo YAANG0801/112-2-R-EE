@@ -47,9 +47,21 @@ AI》
 得到各大學各等級別，不分日間/進修別，的學生人數
 
 
+## 整理資料
+
+## 水平合併
+
+AI》
+將result_cleaned與df_filtered進行水平合併：
+  - id欄位依據："學校名稱", "等級別"欄位，
+  - 合併方式： 保留result_cleaned的所有資料
+
+
+
 # 範例程式
 
 ```r
+
 
 # 引入大專院校學生人數----
 library(readr)
@@ -64,8 +76,57 @@ result <- df_all %>%
   
 print(result)
 
+## "等級別"欄位英文、數字及空白 ----
+library(tidyverse)
+
+# 假設result是您的資料框
+result_cleaned <- result %>%
+  mutate(等級別 = str_remove_all(等級別, "[A-Za-z0-9\\s]"))
+
+# 印出修改後的結果
+print(result_cleaned)
+
 # 引入原住民學生數----
 library(readr)
 df_native <- read_csv("112native_A1-1.csv")
 
+## 所有欄位名稱有出現"在學學生人數_"或"班"都從名稱中移除-----
+library(tidyverse)
+
+# 假設df_native是您的資料框
+df_cleaned <- df_native %>%
+  rename_all(~gsub("在學學生人數_|班", "", .))
+
+# 印出修改後的結果
+print(df_cleaned)
+
+## `df_cleaned`轉換為長格式 -----
+library(tidyr)
+
+# 假設df_cleaned是您的資料框
+df_long <- df_cleaned %>% 
+  pivot_longer(cols = c("博士", "碩士", "學士", "二專", "五專"), 
+               names_to = "等級別", values_to = "原住民學生數")
+
+# 印出修改後的結果
+print(df_long)
+
+## 只保留 "學校名稱"、"等級別" 和 "原住民學生數" 這三個欄位----
+library(dplyr)
+
+# 假設df_long是您的資料框
+df_filtered <- df_long %>%
+  select(學校名稱, 等級別, 原住民學生數)
+
+# 印出修改後的結果
+print(df_filtered)
+
+# 合併----
+library(tidyverse)
+
+# 假設result_cleaned (左）和df_filtered（右）是您的資料框
+merged_data <- left_join(result_cleaned, df_filtered, by = c("學校名稱", "等級別"))
+
+# 印出合併後的結果
+print(merged_data)
 ```
