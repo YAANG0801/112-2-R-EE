@@ -74,7 +74,7 @@ df_right2 <- data.frame(
 
 ## 練習題
 
-[中央銀行利率](https://cpx.cbc.gov.tw/Range/RangeSelect?pxfilename=EG2AM01.px)
+[中央銀行利率](https://cpx.cbc.gov.tw/Range/RangeSelect?pxfilename=EG2AM01.px)  
 [央行消費貸款及建築貸款餘額](https://www.cbc.gov.tw/tw/cp-526-1078-7BD41-1.html)
 
 # Date/Time class
