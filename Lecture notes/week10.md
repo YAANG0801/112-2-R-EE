@@ -95,7 +95,7 @@ native112_long <- native112_long |>
   select(學年度,學校名稱, 學制, 在學學生人數)
 
 # 瀏覽前3行
-glimpse(head(long_format, 3))
+glimpse(head(native112_long, 3))
 
 ## 短化----
 # 將資料精簡並加總相同學校名稱、等級別的數值型欄位
