@@ -4,6 +4,10 @@
 
 https://github.com/tpemartin/112-2-R-EE/blob/476752febabf2d5125035169c7ad71dd8781eb04/Lecture%20notes/week10.md?plain=1#L75-L134
 
+## 作法
+
+[![](../img/2024-04-28-06-22-46.png)](https://www.figma.com/file/JF501BeiuwS0C1Hz0tfCyh/teaching-R?type=whiteboard&node-id=26-155&t=qoKsCm8otfQtDuNQ-4)
+
 ## 水平合併多學年
 
 
