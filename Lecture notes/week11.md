@@ -157,4 +157,4 @@ https://github.com/tpemartin/112-2-R-EE/blob/e907d8e45ff998636285ca119c138f57b0a
 ## 練習
 
 1. 104-108的merged_data都要增加"總計"欄位。
-2. 從[中選會](https://www.cec.gov.tw/)找到最近兩次總統大學的資料，以縣市為身份，水平合併兩次資料。
+2. 從[中選會](https://db.cec.gov.tw/ElecTable/Election?type=President)找到最近兩次總統大學的資料，以縣市為身份，水平合併兩次資料。
