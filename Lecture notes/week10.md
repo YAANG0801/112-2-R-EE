@@ -129,6 +129,20 @@ glimpse(head(merged_data, 3))
 merged_data <- native112_long %>%
   left_join(allStudent112_short |> select(-學年度), by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
 
+merged_data <- merged_data |>
+  rename("原住民生人數"='在學學生人數')
+
+merged_data <- merged_data |>
+  select(學年度, 學校名稱, 學制, 原住民生人數, 總計)
+
+merged_data <- merged_data |>
+  mutate(
+    原住民生比例 = 原住民生人數/總計
+  )
+
+merged_data <- merged_data |> na.omit()
+
 # Display the first 3 rows and structure of the resulting merged data frame
 glimpse(head(merged_data, 3))
+
 ```
