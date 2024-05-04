@@ -1,5 +1,7 @@
 merge_allStudent_native112 <- function(allStudent112, native112){
   
+  # allStudent112 = allStudent
+  # native112 = native
   library(dplyr)
   
   # 水平合併-----
@@ -16,6 +18,8 @@ merge_allStudent_native112 <- function(allStudent112, native112){
   
   # 瀏覽前3行
   glimpse(head(native112_long, 3))
+  
+  # allStudent112 <- fix_allStudent_class(allStudent112)
   
   ## 短化----
   # 將資料精簡並加總相同學校名稱、等級別的數值型欄位
@@ -63,4 +67,26 @@ merge_allStudent_native112 <- function(allStudent112, native112){
   # merged_data <- merged_data |> na.omit()
   
   return(merged_data)
+}
+
+create_total <- function(df){
+  library(dplyr)
+  
+  # 计算总和并添加到数据框中
+  df <- df %>%
+    mutate(總計 = rowSums(select(., starts_with("一年級男生"):ends_with("延修生女生")), na.rm=T))
+  
+  return(df)
+}
+
+fix_allStudent_class <- function(allStudent112){
+  library(dplyr)
+  
+  # 将字符型列转换为数值型列
+  allStudent112 <- allStudent112 %>%
+    mutate(across(matches("^一年級男生$|^一年級女生$|^二年級男生$|^二年級女生$|^三年級男生$|^三年級女生$|^四年級男生$|^四年級女生$|^五年級男生$|^五年級女生$|^六年級男生$|^六年級女生$|^七年級男生$|^七年級女生$|^延修生男生$|^延修生女生$"), 
+                  ~as.numeric(gsub(",", "", .))))
+  
+  return(allStudent112)
+  
 }
