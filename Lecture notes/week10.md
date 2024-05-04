@@ -73,6 +73,7 @@ interest_rate <- read_csv("interest-rate.csv")
 loan <- read_csv("loan.csv")
 
 
+
 ## 所有學生 ----
 allStudent112 <- read_csv("112_student.csv")
 
@@ -82,7 +83,7 @@ native112 <- read_csv("112native_A1-1.csv")
 library(dplyr)
 
 # 水平合併-----
-
+library(tidyverse)
 ## 長式化----
 native112_long <- native112 %>%
   pivot_longer(cols = starts_with("在學學生人數"), 
