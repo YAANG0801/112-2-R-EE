@@ -127,8 +127,7 @@ glimpse(head(merged_data, 3))
 
 # Merge allStudent112_short into native112_long based on school name and 學制/等級別
 merged_data <- native112_long %>%
-  select(-學年度) |>
-  left_join(allStudent112_short, by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
+  left_join(allStudent112_short |> select(-學年度), by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
 
 # Display the first 3 rows and structure of the resulting merged data frame
 glimpse(head(merged_data, 3))
