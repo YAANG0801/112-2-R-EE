@@ -101,6 +101,7 @@ for (year in 104:112) {
   # Download and import allStudent data
   allStudent <- read.csv(allStudent_url)
   allStudent$學年度 <- year  # Add '學年度' column
+  allStudent <- fix_allStudent_class(allStudent)
   
   # 80 行。。。 用merge_allStudent_native112(allStudent112 = allStudent, native112 = native)來代表
   # Merge datasets for the current year using existing function
@@ -113,13 +114,34 @@ for (year in 104:112) {
 # View the structure of merged_data_list
 str(merged_data_list)
 
+## 總計 ------
+df <- merged_data_list[["104"]]
+
+library(dplyr)
+
+# 计算总和并添加到数据框中
+df <- df %>%
+  mutate(總計 = rowSums(select(., starts_with("一年級男生"):ends_with("延修生女生"))))
+
+source("r/merge.R")
+for(year in 104:108){
+  
+  merged_data_list[[as.character(year)]] <- 
+    create_total(merged_data_list[[as.character(year)]])
+  
+}
+
 ```
 
 merge.R 內容
 
-https://github.com/tpemartin/112-2-R-EE/blob/e907d8e45ff998636285ca119c138f57b0afba61/r/merge.R#L1-L66
+https://github.com/tpemartin/112-2-R-EE/blob/d81256187be4831d0185ab8b6761519ee729b6e3/r/merge.R#L1-L92
 
 ## 練習
 
-1. 104-108的merged_data都要增加"總計"欄位。
-2. 從[中選會](https://db.cec.gov.tw/ElecTable/Election?type=President)找到最近兩次總統大學的資料，以縣市為身份，水平合併兩次資料。
+### 1. 104-108的merged_data都要增加"總計"欄位。
+
+
+
+
+### 2. 從[中選會](https://db.cec.gov.tw/ElecTable/Election?type=President)找到最近兩次總統大學的資料，以縣市為身份，水平合併兩次資料。
