@@ -25,6 +25,135 @@ https://github.com/tpemartin/112-2-R-EE/blob/9624b517bc8a5bf1cb2757bb546ddd3a22f
 
 [AI>>](./week11-prompt.md#水平合併多學年)
 
+## 範例程式
+
+```r
+
+## 所有學生 ----
+allStudent112 <- read_csv("112_student.csv")
+
+## 原住民學生 ----
+native112 <- read_csv("112native_A1-1.csv")
+  
+library(dplyr)
+
+# 水平合併-----
+
+## 長式化----
+native112_long <- native112 %>%
+  pivot_longer(cols = starts_with("在學學生人數"), 
+               names_to = "學制", 
+               values_to = "在學學生人數") %>%
+  mutate(學制 = str_extract(學制, "(?<=_).+"))  # 提取學制名稱
+
+native112_long <- native112_long |>
+  select(學年度,學校名稱, 學制, 在學學生人數)
+
+# 瀏覽前3行
+glimpse(head(long_format, 3))
+
+## 短化----
+# 將資料精簡並加總相同學校名稱、等級別的數值型欄位
+allStudent112_short <- allStudent112 %>%
+  group_by(學校名稱, 等級別) %>%
+  summarise(across(where(is.numeric), sum))
+
+# 瀏覽前3行
+glimpse(head(allStudent112_short, 3))
+
+# 合併 -----
+library(dplyr)
+library(stringr)
+
+# Remove "班" from the "學制" column in native112_long
+native112_long <- native112_long %>%
+  mutate(學制 = str_remove(學制, "班"))
+
+# Remove leading whitespace and everything before it from the "等級別" column in allStudent112_short
+allStudent112_short <- allStudent112_short %>%
+  mutate(等級別 = str_trim(str_extract(等級別, "(?<=\\s).*")))
+
+# Merge allStudent112_short into native112_long based on school name and 學制/等級別
+merged_data <- native112_long %>%
+  left_join(allStudent112_short |> select(-學年度), by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
+
+# Display the first 3 rows and structure of the resulting merged data frame
+glimpse(head(merged_data, 3))
+
+# 更改 '在學學生人數' 欄位名為 "原住民生人數"
+merged_data <- merged_data |>
+  rename("原住民生人數"='在學學生人數')
+
+# 只留下想要的欄位
+merged_data <- merged_data |>
+  select(學年度, 學校名稱, 學制, 原住民生人數, 總計)
+
+# 計算各學制原住民生比例
+merged_data <- merged_data |>
+  mutate(
+    原住民生比例 = 原住民生人數/總計
+  )
+
+# 去除有NA的rows
+merged_data <- merged_data |> na.omit()
+
+## 水平合併歷學年資料
+source("r/merge.R")
+
+# Data Manipulation with Tidyverse -----
+
+library(dplyr)
+library(lubridate)
+
+# Function to download and process data for a specific year
+download_and_process <- function(year) {
+  # Construct URLs
+  url_native <- paste0("https://stats.moe.gov.tw/files/ebook/native/", year, "/", year, "native_A1-1.csv")
+  url_student <- paste0("https://stats.moe.gov.tw/files/detail/", year, "/", year, "_student.csv")
+  
+  # Download data
+  native <- read.csv(url_native)
+  allStudent <- read.csv(url_student)
+  
+  # Add "學年度" column to native data
+  native <- mutate(native, 學年度 = year)
+  allStudent <- mutate(allStudent, 學年度= year)
+  
+  return(list(native = native, allStudent = allStudent))
+}
+
+
+# Initialize list to store merged data
+merged_data <- list()
+
+# Loop through years
+for (year in 104:112) {
+  # Download and process data for the current year
+  data <- download_and_process(year)
+  
+  # Merge data for the current year and append to the list
+  merged_data[[as.character(year)]] <- merge_allStudent_native112(data$allStudent, data$native)
+}
+
+
+df <- merged_data[["104"]]
+
+# 載入必要的套件
+library(dplyr)
+
+# 創建新的欄位"總計"
+df <- df %>%
+  mutate(總計 = rowSums(select(., 一年級男生:延修生女生), na.rm = TRUE))
+
+# 顯示前3行及數據框的結構
+glimpse(head(df))
+
+```
+
+merge.R 內容
+
+https://github.com/tpemartin/112-2-R-EE/blob/e907d8e45ff998636285ca119c138f57b0afba61/r/merge.R#L1-L66
+
 ## 練習
 
 1. 104-108的merged_data都要增加"總計"欄位。
