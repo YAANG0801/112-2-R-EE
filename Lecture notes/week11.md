@@ -24,3 +24,8 @@ https://github.com/tpemartin/112-2-R-EE/blob/9624b517bc8a5bf1cb2757bb546ddd3a22f
 - [大專院校校別學生數](https://data.gov.tw/dataset/6231)
 
 [AI>>](./week11-prompt.md#水平合併多學年)
+
+## 練習
+
+1. 104-108的merged_data都要增加"總計"欄位。
+2. 從[中選會](https://www.cec.gov.tw/)找到最近兩次總統大學的資料，以縣市為身份，水平合併兩次資料。
