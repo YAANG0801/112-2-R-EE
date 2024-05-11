@@ -174,3 +174,9 @@ allStudent106 <- compute_studentSum(
 留意
 
 https://github.com/tpemartin/112-2-R-EE/blob/3dd3e428adb54ac1524b88d9743c41a09b89b1f0/Lecture%20notes/merge.R#L62C68-L62C76
+
+# 合併各年
+
+## flow chart
+
+https://www.figma.com/file/JF501BeiuwS0C1Hz0tfCyh/teaching-R?type=whiteboard&node-id=71%3A464&t=ys95MBRMjb6iivaL-1
