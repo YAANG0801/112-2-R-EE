@@ -43,8 +43,9 @@ merge_allStudent_native112 <- function(allStudent112, native112){
     mutate(等級別 = str_trim(str_extract(等級別, "(?<=\\s).*")))
   
   # Merge allStudent112_short into native112_long based on school name and 學制/等級別
+  allStudent112_short$學年度 <- NULL
   merged_data <- native112_long %>%
-    left_join(allStudent112_short |> select(-學年度), by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
+    left_join(allStudent112_short, by = c("學校名稱" = "學校名稱", "學制" = "等級別"))
   
   # Display the first 3 rows and structure of the resulting merged data frame
   glimpse(head(merged_data, 3))
