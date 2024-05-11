@@ -106,3 +106,67 @@ allStudent106 <- allStudent106 %>%
 # 看一下轉換後的前3行數據
 glimpse(head(allStudent106))
 ```
+
+## 範例程式
+
+主程式
+```r
+# recap ------
+
+## 所有學生 ----
+allStudent112 <- read_csv("112_student.csv")
+
+## 原住民學生 ----
+native112 <- read_csv("112native_A1-1.csv")
+
+## 水平合併歷學年資料
+source("merge.R")
+
+merged_data <- merge_allStudent_native112(allStudent112 = allStudent112,
+                        native112 = native112)
+
+library(tidyverse)
+# 112 ----
+# 下載並引入原住民生資料----
+native112 <- read.csv("https://stats.moe.gov.tw/files/ebook/native/112/112native_A1-1.csv")
+
+# 下載並引入全校學生資料----
+allStudent112 <- read.csv("https://stats.moe.gov.tw/files/detail/112/112_student.csv")
+
+# 引入 merge_allStudent_native112 函數
+source("r/merge.R")
+
+# 使用 merge_allStudent_native112 函數合併資料集
+merged_data112 <- merge_allStudent_native112(allStudent112, native112)
+
+# 104------
+# 下載並引入104年的原住民生資料
+native104 <- read.csv("https://stats.moe.gov.tw/files/ebook/native/104/104native_A1-1.csv")
+
+# 下載並引入104年的全校學生資料
+allStudent104 <- read.csv("https://stats.moe.gov.tw/files/detail/104/104_student.csv")
+
+## 總計----
+source("r/merge.R")
+allStudent104 <- compute_studentSum(allStudent104 = allStudent104)
+
+
+# 下載並引入105年的全校學生資料
+allStudent105 <- read.csv("https://stats.moe.gov.tw/files/detail/105/105_student.csv")
+allStudent105 <- compute_studentSum(allStudent104 = allStudent105)
+
+# 106 -----
+# 下載並引入106年的原住民生資料
+native106 <- read.csv("https://stats.moe.gov.tw/files/ebook/native/106/106native_A1-1.csv")
+
+# 下載並引入106年的全校學生資料
+allStudent106 <- read.csv("https://stats.moe.gov.tw/files/detail/106/106_student.csv")
+## 轉成數值class ----
+source("r/merge.R")
+allStudent106 <- fix_class(allStudent106)
+allStudent106 <- compute_studentSum(
+  allStudent104 = allStudent106
+)
+```
+
+[merge.R](https://github.com/tpemartin/112-2-R-EE/blob/main/Lecture%20notes/merge.R)
