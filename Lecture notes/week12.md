@@ -172,4 +172,7 @@ allStudent106 <- compute_studentSum(
 [merge.R](https://github.com/tpemartin/112-2-R-EE/blob/main/Lecture%20notes/merge.R)
 
 留意
+
+https://github.com/tpemartin/112-2-R-EE/blob/3dd3e428adb54ac1524b88d9743c41a09b89b1f0/Lecture%20notes/merge.R#L62C68-L63
+
 https://github.com/tpemartin/112-2-R-EE/blob/3dd3e428adb54ac1524b88d9743c41a09b89b1f0/Lecture%20notes/merge.R#L62C68-L62C76
