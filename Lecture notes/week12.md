@@ -180,3 +180,37 @@ https://github.com/tpemartin/112-2-R-EE/blob/3dd3e428adb54ac1524b88d9743c41a09b8
 ## flow chart
 
 https://www.figma.com/file/JF501BeiuwS0C1Hz0tfCyh/teaching-R?type=whiteboard&node-id=71%3A464&t=ys95MBRMjb6iivaL-1
+
+## 範例程式
+
+```r
+# 合併多年----
+source("r/merge.R")
+# 創建一個空的列表來存儲合併後的資料
+merged_data_list <- list()
+
+# 迭代處理104到112年的資料
+for (year in 104:112) {
+  # 下載並引入原住民生資料
+  native <- read.csv(paste0("https://stats.moe.gov.tw/files/ebook/native/", year, "/", year, "native_A1-1.csv"))
+  
+  native$學年度 <- year
+  # 下載並引入全校學生資料
+  allStudent <- read.csv(paste0("https://stats.moe.gov.tw/files/detail/", year, "/", year, "_student.csv"))
+  
+  # 判斷是否有總計欄位
+  if (!("總計" %in% names(allStudent))) {
+    # 使用 fix_class 函數解決欄位型態問題
+    allStudent <- fix_class(allStudent)
+    # 使用 compute_studentSum 函數計算並新增"總計"欄位
+    allStudent <- compute_studentSum(allStudent)
+  }
+  
+  # 使用 merge_allStudent_native112 函數合併資料
+  merged_data <- merge_allStudent_native112(allStudent, native)
+  
+  # 將結果存入 merged_data_list 中，以{{year}}為元素名稱
+  merged_data_list[[as.character(year)]] <- merged_data
+}
+
+```
