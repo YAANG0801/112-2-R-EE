@@ -4,6 +4,14 @@
 
   - [主程式](./week12.md#範例程式合併多年)  
   - [支援程式merge.R](https://github.com/tpemartin/112-2-R-EE/blob/main/Lecture%20notes/merge.R)
+  
+> 進行stack data前要先移除有問題的109學年資料：
+> ```r
+> # 移除109 -----
+>
+> merged_data_list[["109"]] <- NULL
+> ```
+
 
 # 資料說明
 
