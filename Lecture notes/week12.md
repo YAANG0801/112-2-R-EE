@@ -181,7 +181,7 @@ https://github.com/tpemartin/112-2-R-EE/blob/3dd3e428adb54ac1524b88d9743c41a09b8
 
 https://www.figma.com/file/JF501BeiuwS0C1Hz0tfCyh/teaching-R?type=whiteboard&node-id=71%3A464&t=ys95MBRMjb6iivaL-1
 
-## 範例程式
+## 範例程式:合併多年
 
 ```r
 # 合併多年----

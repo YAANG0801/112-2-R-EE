@@ -2,7 +2,7 @@
 
 ## 各學年資料合併
 
-  - [主程式](./week12.md#範例程式)  
+  - [主程式](./week12.md#範例程式合併多年)  
   - [支援程式merge.R](https://github.com/tpemartin/112-2-R-EE/blob/main/Lecture%20notes/merge.R)
 
 # 資料說明
