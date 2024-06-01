@@ -48,3 +48,7 @@ AI>>
 
 AI>>
 > ```href_links是字串向量，每個元素是一個網址, 針對每一個網址判斷是否帶有"DownloadFile"字眼，如果有就下載成csv檔並引入到R；如果沒有就不做任何事情，跳去處理下個元素。所有引入到R的資料都要收錄在一個list裡。```
+
+## 網頁爬蟲概念圖
+
+[![](../img/web-crawl.png)](https://www.figma.com/design/yPrPE97bayRonBCsLyQHcS/R?node-id=13-45&t=G6naZheQUxwehvei-1)
